@@ -1,0 +1,138 @@
+<html>
+
+    <head>
+		<meta charset="ISO-8859-1">
+		<title>FHV - Register - Point Accounts</title>
+		
+		<link rel="stylesheet" href="../styles/mainStyle.css">
+		<link rel="shortcut icon" href="../images/favicon.ico">
+
+        <script src="../scripts/registerForm.js"></script>
+    </head>
+
+    <body>
+
+		<!-- Navigation-Bar -->
+		<div id="navigation-bar">
+		
+			<img src="../images/fhv_logo.png" id="fhv-logo">
+			
+			<div id="navigation-bar-paragraph">
+				<ul id="navigation-links-ul">
+					
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="./pages/register.html">> Register <</a></li>
+
+					<li></li>
+					
+					<li>- Kurse-</li>
+					<li class="sublink"><a href="./webapplications.html">Webapplikationen</a></li>
+					<li class="sublink"><a href="./oo-analysis-design.html">Objektorientierte Analyse & Design</a></li>
+					
+					<li></li>
+					<li></li>
+					
+					<li>
+						<a href="mailto:bha9465@students.fhv.at"><img src="../images/mailIcon.png" id="mail-icon">Contact Me<img src="../images/mailIcon.png" id="mail-icon"></a>
+					</li>
+					
+				</ul>
+			</div>
+			
+			<div id="navigation-footer">
+				© Benjamin Hartmann, 2021
+			</div>
+			
+		</div>
+		
+		<!-- Content -->
+		<div id="content">
+        
+			<h1>Registrierung</h1>
+
+			<div id="course-list-block">
+
+				<form action="mailto:bha9465@gmail.com" method="POST" enctype="text/plain">
+				
+					<p class="form-text">Vorname:</p> <input type="text" name="vorname"><br>
+					<p class="form-text">Nachname:</p> <input type="text" name="nachname"><br>
+					
+					<p class="form-text">Address:</p><textarea rows="4" cols="50" name="address" style="display: block;">Enter Address here . . .</textarea><br>
+
+					<p class="form-text"><label for="herkunftsland">Herkunftsland:</label></p>
+
+					<select name="herkunftsland" id="herkunftsland">
+						<option value="austria">Österreich</option>
+						<option value="switzerland">Schweiz</option>
+						<option value="germany">Deutschland</option>
+						<option value="others">Andere</option>
+					</select>
+
+					<br><br>
+
+					<p class="form-text">Gewünschte User-ID:</p> <input type="text" name="user-id"><br>
+					<p class="form-text">Passwort:</p> <input type="password" name="password"><br>
+					<p class="form-text">Passwort-Bestätigung:</p> <input type="password" name="confirm-password"><br><br>
+
+					<p class="form-text">Geschlecht:</p>
+
+						<input type="radio" id="genderMale" name="gender" value="Male" checked>
+						<label for="genderMale">Male</label>
+
+						<input type="radio" id="genderFemale" name="gender" value="Female">
+						<label for="genderFemale">Female</label>
+
+						<input type="radio" id="genderDiverse" name="gender" value="Divers">
+						<label for="genderDiverse">Divers</label>
+
+						<br><br>
+
+					<p class="form-text">Studiengänge:</p>
+
+						<select name="studiengang" id="studiengang" multiple style="display: block;">
+							<option value="webapplications" selected>Web-Applikationen</option>
+							<option value="oo-analysis-design">Objektorientierte Analyse & Design</option>
+							<option value="stochastic">Stochastik</option>
+							<option value="english-4">English 4: Technical Writing</option>
+						</select>
+
+						<br>
+
+					<p class="form-text">Studienjahr:</p>
+
+						<select name="study-year" id="study-year">
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021" selected>2021</option>
+							<option value="2022">2022</option>
+						</select>
+
+						<br><br>
+
+					<p class="form-text">Berechtigungsstufen:</p>
+
+						<input type="checkbox" id="permissions-lecturer" name="permissions" value="Dozent">
+						<label for="permissions-lecturer">Dozent</label>
+
+						<input type="checkbox" id="permissions-student" name="permissions" value="Student" checked>
+						<label for="permissions-student">Student</label>
+
+						<input type="checkbox" id="permissions-admin" name="permissions" value="Admin">
+						<label for="permissions-admin">Admin</label>
+
+						<br><br>
+
+					<p class="form-text">e-Mail Adresse:</p> <input type="text" name="email"><br><br>
+					<br><br>
+
+					<input type="submit">
+
+				</form>
+
+			</div>
+
+        </div>
+
+    </body>
+
+</html>

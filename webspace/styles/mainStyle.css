@@ -116,7 +116,7 @@
 		width: 80%;
 		height: 80%;
 		
-		padding: 5% 2%;
+		padding: 2% 2%;
 		
 		font-size: 14px;
 	
@@ -153,6 +153,15 @@
 	
 	}
 	
+	#course-list-block .form-text {
+
+		width: 150px;
+		display: inline-block;
+
+		margin-bottom: 0;
+
+	}
+
 }
 
 
