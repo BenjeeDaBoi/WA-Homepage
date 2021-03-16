@@ -52,69 +52,80 @@
 
 			<div id="course-list-block">
 
-				<form action="mailto:bha9465@gmail.com" method="POST" enctype="text/plain">
+				<form action="mailto:bha9465@students.fhv.at?subject=Registrierung FHV - Points Overview" onsubmit="return validateInput();" method="POST" enctype="text/plain">
 				
-					<p class="form-text">Vorname:</p> <input type="text" name="vorname"><br>
-					<p class="form-text">Nachname:</p> <input type="text" name="nachname"><br>
-					
-					<p class="form-text">Address:</p><textarea rows="4" cols="50" name="address" style="display: block;">Enter Address here . . .</textarea><br>
+					<div class="form-register-block">
 
-					<p class="form-text"><label for="herkunftsland">Herkunftsland:</label></p>
+						<h2>Persönliche Daten</h2>
 
-					<select name="herkunftsland" id="herkunftsland">
-						<option value="austria">Österreich</option>
-						<option value="switzerland">Schweiz</option>
-						<option value="germany">Deutschland</option>
-						<option value="others">Andere</option>
-					</select>
+						<p class="form-text">Vorname:</p> <input type="text" name="vorname"><br>
+						<p class="form-text">Nachname:</p> <input type="text" name="nachname"><br>
+						
+						<p class="form-text">Adresse:</p><textarea rows="4" cols="50" name="address" style="display: block;" id="textarea-address" onfocus="deleteDefaultAddressText();" onfocusout="addDefaultAddressTextIfEmpty();">Adresse hier eingeben . . .</textarea><br>
+						<p class="form-text">e-Mail Adresse:</p> <input type="text" name="email" id="textfield-email"><br><br>
 
-					<br><br>
+						<p class="form-text"><label for="herkunftsland">Herkunftsland:</label></p>
 
-					<p class="form-text">Gewünschte User-ID:</p> <input type="text" name="user-id"><br>
-					<p class="form-text">Passwort:</p> <input type="password" name="password"><br>
-					<p class="form-text">Passwort-Bestätigung:</p> <input type="password" name="confirm-password"><br><br>
-
-					<p class="form-text">Geschlecht:</p>
-
-						<input type="radio" id="genderMale" name="gender" value="Male" checked>
-						<label for="genderMale">Male</label>
-
-						<input type="radio" id="genderFemale" name="gender" value="Female">
-						<label for="genderFemale">Female</label>
-
-						<input type="radio" id="genderDiverse" name="gender" value="Divers">
-						<label for="genderDiverse">Divers</label>
-
-						<br><br>
-
-					<p class="form-text">Studiengänge:</p>
-
-						<select name="studiengang" id="studiengang" multiple style="display: block;">
-							<option value="webapplications" selected>Web-Applikationen</option>
-							<option value="oo-analysis-design">Objektorientierte Analyse & Design</option>
-							<option value="stochastic">Stochastik</option>
-							<option value="english-4">English 4: Technical Writing</option>
-						</select>
-
-						<br>
-
-					<p class="form-text">Studienjahr:</p>
-
-						<select name="study-year" id="study-year">
-							<option value="2019">2019</option>
-							<option value="2020">2020</option>
-							<option value="2021" selected>2021</option>
-							<option value="2022">2022</option>
+						<select name="herkunftsland" id="herkunftsland">
+							<option value="Austria">Österreich</option>
+							<option value="Switzerland">Schweiz</option>
+							<option value="Germany">Deutschland</option>
+							<option value="Others">Andere</option>
 						</select>
 
 						<br><br>
 
-					<p class="form-text">Berechtigungsstufen:</p>
+						<p class="form-text">Geschlecht:</p>
+
+							<input type="radio" id="genderMale" name="gender" value="Male">
+							<label for="genderMale">Male</label>
+
+							<input type="radio" id="genderFemale" name="gender" value="Female">
+							<label for="genderFemale">Female</label>
+
+							<input type="radio" id="genderDiverse" name="gender" value="Divers">
+							<label for="genderDiverse">Divers</label>
+
+							<br><br>
+
+						<h2>User-Daten</h2>
+
+						<p class="form-text">Gewünschte User-ID:</p> <input type="text" name="user-id" id="textfield-userid"><br>
+						<p class="form-text">Passwort:</p> <input type="password" name="password" id="textfield-password"><br>
+						<p class="form-text">Passwort-Bestätigung:</p> <input type="password" name="confirm-password" id="textfield-password-confirmation"><br><br>
+
+					</div>
+
+					<div class="form-register-block">
+						<h2>Studien-Informationen</h2>
+						<p class="form-text">Studiengänge:</p>
+
+							<select name="studiengang" id="studiengang" multiple style="display: block;">
+								<option value="webapplications" selected>Web-Applikationen</option>
+								<option value="oo-analysis-design">Objektorientierte Analyse & Design</option>
+								<option value="stochastic">Stochastik</option>
+								<option value="english-4">English 4: Technical Writing</option>
+							</select>
+
+							<br>
+
+						<p class="form-text">Studienjahr:</p>
+
+							<select name="study-year" id="study-year">
+								<option value="2019">2019</option>
+								<option value="2020">2020</option>
+								<option value="2021" selected>2021</option>
+								<option value="2022">2022</option>
+							</select>
+
+							<br><br>
+						
+						<h2>Permissions</h2>
 
 						<input type="checkbox" id="permissions-lecturer" name="permissions" value="Dozent">
 						<label for="permissions-lecturer">Dozent</label>
 
-						<input type="checkbox" id="permissions-student" name="permissions" value="Student" checked>
+						<input type="checkbox" id="permissions-student" name="permissions" value="Student">
 						<label for="permissions-student">Student</label>
 
 						<input type="checkbox" id="permissions-admin" name="permissions" value="Admin">
@@ -122,11 +133,12 @@
 
 						<br><br>
 
-					<p class="form-text">e-Mail Adresse:</p> <input type="text" name="email"><br><br>
-					<br><br>
+						<div style="margin-top: 10%;">
+							<input type="submit" value="Abschicken">
+							<button type="button" onclick="document.querySelectorAll('form')[0].reset();">Reset</button>
+						</div>
 
-					<input type="submit">
-
+					</div>
 				</form>
 
 			</div>

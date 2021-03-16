@@ -152,13 +152,26 @@
 		text-align: center;
 	
 	}
-	
+
+	.form-register-block {
+
+		width: 50%;
+		float: left;
+
+	}
+
 	#course-list-block .form-text {
 
 		width: 150px;
 		display: inline-block;
 
 		margin-bottom: 0;
+
+	}
+
+	#textfield-vorname {
+
+		border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
 
 	}
 
