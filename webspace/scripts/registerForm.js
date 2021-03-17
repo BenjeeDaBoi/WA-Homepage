@@ -17,6 +17,11 @@ function validateInput() {
         return false;
     }
 
+    if (!isMajorSelected()) {
+        printError("Bitte wählen Sie mindestens einen Studiengang!");
+        return false;
+    }
+
     if (!isPermissionSelected()) {
         printError("Bitte wählen Sie mind. eine Berechtigungsstufe aus!");
         return false;
@@ -103,9 +108,7 @@ function isAddressFilled(textareaAddress) {
 
 function isGenderSelected() {
 
-    let genderSelected = false;
     let genderRadioButtons = document.getElementsByName("gender");
-
     let genderRadioButtonsLength = genderRadioButtons.length;
 
     for (let i = 0; i < genderRadioButtonsLength; ++i) {
@@ -121,11 +124,27 @@ function isGenderSelected() {
 
 }
 
+function isMajorSelected() {
+
+    let majorList = document.getElementById("studiengang");
+    let majorListLength = majorList.length;
+
+    for (let i = 0; i < majorListLength; ++i) {
+
+        if (majorList[i].selected == true) {
+            return true;
+        }
+
+    }
+
+    majorList.focus();
+    return false;
+
+}
+
 function isPermissionSelected() {
 
-    let permissionSelected = false;
     let permissionCheckBoxes = document.getElementsByName("permissions");
-
     let permissionCheckBoxesLength = permissionCheckBoxes.length;
 
     for (let i = 0; i < permissionCheckBoxesLength; ++i) {
