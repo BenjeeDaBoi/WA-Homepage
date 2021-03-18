@@ -228,12 +228,7 @@ function checkIfEMailSyntaxCorrect(eMailAddress) {
      * Der * deswegen, weil auch einfach a@meinedomain.at stehen kann!
      * + heiﬂt hier 1x oder mehr, * heiﬂt 0 oder mehrere
      * 
-     * Danach muss vor dem @ Zeichen ein Negative Lookback in der RegEx stehen.
-     * Dies hat den Grund, dass somit vor dem @ Zeichen KEIN PUNKT stehen darf.
-     * (?<!ABC) f¸r einen Negative Lookback
-     * 
-     * (?<!\.)\@
-     * 
+     * Durch diese Group-Pattern wird auch verhindert, dass das letzte Zeichen vor dem @ ein . ist
      * Jetzt im Domain-Name mit TLD (min. 2, max. 6 Zeichen) und beliebigen Subdomains.
      * 
      * Es muss IMMER mindestens ein Domain-Name stehen. Subdomains sind beliebig. Deswegen:
@@ -245,6 +240,6 @@ function checkIfEMailSyntaxCorrect(eMailAddress) {
      * 
     */
 
-    return ((eMailAddress.match(/^[a-zA-Z]((\.[\w-]+)|([\w-]))*(?<!\.)\@([\w-]+\.)+[a-zA-Z]{2,6}$/) != null) ? true : false);
+    return ((eMailAddress.match(/^[a-zA-Z]((\.[\w-]+)|([\w-]))*\@([\w-]+\.)+[a-zA-Z]{2,6}$/) != null) ? true : false);
 
 }
